@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_190sdp"
+    android:layout_marginStart="@dimen/_7sdp"
+    android:layout_marginTop="@dimen/_10sdp"
+    android:layout_marginEnd="@dimen/_7sdp"
+    android:layout_marginBottom="@dimen/_10sdp"
+    android:background="@color/colorWhite"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/_30sdp"
+        android:layout_marginEnd="@dimen/_30sdp"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_weight=".3"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imgMyFavourite"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:scaleType="fitXY"
+                android:src="@drawable/drpicture" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtTitleMyFavourite"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_weight=".3"
+            android:ellipsize="start"
+            android:gravity="center"
+            android:maxLines="2"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingEnd="@dimen/_10sdp"
+            android:text="تيشرت بكرة احلي حريمي تيشرت جامد جدااا وخطير "
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/_11sdp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <RatingBar
+                android:id="@+id/ratings"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:clickable="false"
+                android:focusable="false"
+                android:isIndicator="false"
+                android:numStars="5"
+                android:progressBackgroundTint="#000000"
+                android:progressTint="@color/fcolor"
+                android:rating="5"
+                android:scaleX=".8"
+                android:scaleY=".8"
+                android:secondaryProgressTint="#ffffff"
+                android:stepSize="1.5" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".13"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_7sdp"
+                    android:gravity="center"
+                    android:text="Rs."
+                    android:textColor="@color/colorDarkGray"
+                    android:textSize="@dimen/_12sdp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtPriceMyFavourite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="18850"
+                    android:textColor="@color/colorDarkGray"
+                    android:textSize="@dimen/_12sdp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".17"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <ImageView
+                android:id="@+id/imgFavMyFavourite"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".2"
+                android:scaleX=".6"
+                android:scaleY=".6"
+                android:src="@drawable/fav2" />
+
+            <ImageView
+                android:id="@+id/imgAddToCartMyFavourite"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".2"
+                android:scaleX=".7"
+                android:scaleY=".7"
+                android:src="@drawable/addtocart" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

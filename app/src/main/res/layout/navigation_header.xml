@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_150sdp"
+    android:background="@drawable/sidemenubag"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/view2"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_70sdp"
+            android:layout_centerHorizontal="true"
+            android:background="@color/colorWhite"
+            android:elevation="12dp"
+            android:innerRadius="0dp"
+            android:shape="oval"
+            android:thicknessRatio="2"
+            app:cardBackgroundColor="@color/colorWhite"
+            app:cardCornerRadius="@dimen/_35sdp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/view3"
+                android:layout_width="@dimen/_66sdp"
+                android:layout_height="@dimen/_66sdp"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:elevation="12dp"
+                android:innerRadius="0dp"
+                android:padding="5dp"
+                android:shape="oval"
+                android:thicknessRatio="2"
+                app:cardBackgroundColor="@color/colorHeader"
+                app:cardCornerRadius="@dimen/_33sdp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:elevation="12dp"
+                    android:innerRadius="0dp"
+                    android:padding="5dp"
+                    android:shape="oval"
+                    android:thicknessRatio="2"
+                    app:cardCornerRadius="@dimen/_30sdp">
+
+
+                    <ImageView
+                        android:id="@+id/profilePhoto"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/drpicture" />
+                </androidx.cardview.widget.CardView>
+            </androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_20sdp"
+            android:textColor="@color/colorWhite"
+            android:text="Alla Hassan"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:textSize="@dimen/_13sdp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_17sdp"
+            android:textColor="@color/colorWhite"
+            android:text="a@a.com"
+            android:gravity="center"
+            android:textSize="@dimen/_10sdp"
+            />
+
+    </LinearLayout>
+</RelativeLayout>

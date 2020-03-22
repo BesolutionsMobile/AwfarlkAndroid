@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ScenarioAwfarlk.ScenarioContactUs.Controller.Contact_Us">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/toolbar2" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="@color/colorWhite"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight=".55"
+                    android:orientation="vertical"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight=".3"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:layout_weight=".2"
+                            android:gravity="end">
+
+                            <ImageView
+                                android:layout_width="@dimen/_40sdp"
+                                android:layout_height="@dimen/_60sdp"
+                                android:src="@drawable/phone"
+                                android:tint="@color/colorPrimary"
+                                android:scaleY=".8"
+                                android:scaleX=".8" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:layout_weight=".8"
+                            android:weightSum="1"
+                            android:paddingEnd="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:paddingStart="@dimen/_3sdp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight=".4"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/_14sdp"
+                                android:text="Phone"
+                                android:textStyle="bold"
+                                android:gravity="start|center_vertical"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight=".5"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/_13sdp"
+                                android:text="01008182062 - 01024439000 - 01004646198"
+                                android:gravity="start|center_vertical"/>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight=".3"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:layout_weight=".2"
+                            android:gravity="end">
+
+                            <ImageView
+                                android:layout_width="@dimen/_40sdp"
+                                android:layout_height="@dimen/_60sdp"
+                                android:src="@drawable/email"
+                                android:tint="@color/colorPrimary"
+                                android:scaleY=".6"
+                                android:scaleX=".6" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:layout_weight=".8"
+                            android:weightSum="1"
+                            android:paddingEnd="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:paddingStart="@dimen/_3sdp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight=".4"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/_14sdp"
+                                android:text="Email"
+                                android:textStyle="bold"
+                                android:gravity="start|center_vertical"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight=".5"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/_13sdp"
+                                android:text="Info@aufarlek1.com"
+                                android:gravity="start|center_vertical"/>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight=".3"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:layout_weight=".2"
+                            android:gravity="end">
+
+                            <ImageView
+                                android:layout_width="@dimen/_40sdp"
+                                android:layout_height="@dimen/_60sdp"
+                                android:src="@drawable/home"
+                                android:tint="@color/colorPrimary"
+                                android:scaleY=".6"
+                                android:scaleX=".6" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:layout_weight=".8"
+                            android:weightSum="1"
+                            android:paddingEnd="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:paddingStart="@dimen/_3sdp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight=".4"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/_14sdp"
+                                android:text="Address"
+                                android:textStyle="bold"
+                                android:gravity="start|center_vertical"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight=".5"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/_13sdp"
+                                android:text="No. 551 Tower 2 Arkan Plaza,Floor5, Bostan St., Zaied City, 6 October, Giza."
+                                android:gravity="start|center_vertical"/>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight=".05"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorLighterGray"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight=".4"
+                    android:orientation="vertical">
+
+
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/appicon1"
+                        android:scaleX=".5"
+                        android:scaleY=".5"/>
+
+
+
+                </LinearLayout>
+
+
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

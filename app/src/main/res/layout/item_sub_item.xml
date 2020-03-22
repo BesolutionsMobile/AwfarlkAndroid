@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_190sdp"
+    android:layout_marginEnd="@dimen/_5sdp"
+    android:layout_marginTop="@dimen/_10sdp"
+    android:layout_marginStart="@dimen/_5sdp"
+    android:layout_marginBottom="@dimen/_5sdp"
+    android:background="@color/colorWhite"
+    android:weightSum="1">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".14"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="match_parent"
+            android:src="@drawable/discountbgen"
+            android:scaleType="fitXY"/>
+
+
+        <LinearLayout
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+
+            <TextView
+                android:id="@+id/txtDiscountSub"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textStyle="bold"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/_12sdp"
+                android:text="20"
+                android:layout_marginStart="@dimen/_3sdp"
+                android:gravity="center"/>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".7"
+                android:orientation="vertical"
+                android:layout_marginStart="@dimen/_2sdp"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight=".5"
+                    android:text="%"
+                    android:textSize="@dimen/_10sdp"
+                    android:textColor="@color/colorWhite"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight=".4"
+                    android:textColor="@color/colorDarkGray"
+                    android:textSize="@dimen/_6sdp"
+                    android:text="off"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+
+
+    <ImageView
+        android:id="@+id/imgSubItem"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:layout_weight=".25"
+        android:scaleType="fitXY"
+        android:src="@drawable/aircondition" />
+
+    <TextView
+        android:id="@+id/txtTitleSubItem"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".3"
+        android:text="تكييف يونيون اير تكييف 5 حصان - بار / سخن (Artify)"
+        android:textSize="@dimen/_13sdp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold"
+        android:paddingStart="@dimen/_7sdp"
+        android:paddingEnd="@dimen/_7sdp"
+        android:gravity="center"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".3"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:layout_weight=".4"
+            android:weightSum="1">
+
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".1"
+                android:scaleY=".7"
+                android:scaleX=".8"
+                android:layout_marginStart="@dimen/_7sdp"
+                android:src="@drawable/comparison"/>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:weightSum="1"
+                android:layout_weight=".9"
+                android:gravity="center">
+
+
+            <RatingBar
+                android:id="@+id/ratings"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:isIndicator="false"
+                android:focusable="false"
+                android:clickable="false"
+                android:scaleX=".8"
+                android:scaleY=".8"
+                android:stepSize="1.5"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:rating="5"
+                android:progressTint="@color/fcolor"
+                android:progressBackgroundTint="#000000"
+                android:secondaryProgressTint="#ffffff"
+                android:numStars="5"
+                />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".6"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:weightSum="1">
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".75"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_7sdp"
+                    android:textColor="@color/colorDarkGray"
+                    android:textSize="@dimen/_15sdp"
+                    android:text="Rs."
+                    android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/txtPriceSubItem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/colorDarkGray"
+                    android:textSize="@dimen/_15sdp"
+                    android:text="18850"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".25"
+                android:orientation="horizontal"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:weightSum="1">
+
+                <ImageView
+                    android:id="@+id/imgFavSubItem"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".5"
+                    android:src="@drawable/fav1"
+                    android:scaleY=".8"
+                    android:scaleX=".8"/>
+
+                <ImageView
+                    android:id="@+id/imgAddToCartSubItem"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".5"
+                    android:src="@drawable/addtocart"
+                    android:scaleY=".8"
+                    android:scaleX=".8"/>
+
+
+
+
+            </LinearLayout>
+
+
+
+
+
+
+
+        </LinearLayout>
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

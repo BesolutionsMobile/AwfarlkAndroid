@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ScenarioAwfarlk.ScenarioHome.Controller.Home_Activity"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:layout_weight=".7"
+        >
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="-160dp"
+            android:shape="oval"
+            android:layout_marginRight="-75dp"
+            android:layout_marginLeft="-75dp"
+            app:cardCornerRadius="@dimen/_210sdp"
+            >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/awfarlak"
+                android:scaleType="fitXY"
+                />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_150sdp"
+                    android:scaleX=".6"
+                    android:scaleY=".6"
+                    android:src="@drawable/appicon2"
+                    android:layout_marginTop="@dimen/_220sdp"/>
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".3"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_30sdp"
+            android:background="@drawable/raduis_all"
+            android:backgroundTint="@color/colorOrange"
+            android:layout_marginLeft="@dimen/_25sdp"
+            android:layout_marginRight="@dimen/_25sdp"
+            android:text="Login"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textSize="@dimen/_12sdp"/>
+
+        <Button
+            android:id="@+id/btnCreateAccount"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_30sdp"
+            android:background="@drawable/raduis_all"
+            android:backgroundTint="@color/colorOrange"
+            android:layout_marginLeft="@dimen/_25sdp"
+            android:layout_marginRight="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="Create Account"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textSize="@dimen/_12sdp"/>
+
+
+
+
+
+    </LinearLayout>
+</LinearLayout>
+
+
+
