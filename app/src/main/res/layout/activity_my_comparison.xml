@@ -12,6 +12,7 @@
         android:layout_height="match_parent">
 
         <LinearLayout
+            android:id="@+id/linearMyComparison"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -76,6 +77,18 @@
 
 
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtNoData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="لا توجد منتجات للمقارنة"
+            android:gravity="center"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"
+            android:textSize="@dimen/_20sdp"
+            android:visibility="gone"/>
     </RelativeLayout>
 
 </LinearLayout>

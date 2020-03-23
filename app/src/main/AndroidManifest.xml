@@ -3,13 +3,16 @@
     package="com.besolutions.awfarlk">
 
     <application
+        android:name=".Utils.BaseApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ScenarioAwfarlk.ScenarioFAQ.Controller.FAQ"></activity>
+        <activity android:name=".ScenarioAwfarlk.ScenarioChangePassword.Controller.ChangePassword"></activity>
+        <activity android:name=".ScenarioAwfarlk.ScenarioPersonalInfo.Controller.PersonalInfo" />
+        <activity android:name=".ScenarioAwfarlk.ScenarioFAQ.Controller.FAQ" />
         <activity android:name=".ScenarioAwfarlk.ScenarioContactUs.Controller.Contact_Us" />
         <activity android:name=".ScenarioAwfarlk.ScenarioAboutUs.Controller.About_Us" />
         <activity android:name=".ScenarioAwfarlk.ScenarioMyComprison.Controller.My_Comparison" />

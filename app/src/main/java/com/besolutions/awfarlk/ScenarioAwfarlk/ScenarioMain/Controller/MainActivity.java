@@ -20,15 +20,21 @@ import android.widget.TextView;
 import com.besolutions.awfarlk.R;
 import com.besolutions.awfarlk.ScenarioAwfarlk.ScenarioAboutUs.Controller.About_Us;
 import com.besolutions.awfarlk.ScenarioAwfarlk.ScenarioCart.Controller.Cart;
+import com.besolutions.awfarlk.ScenarioAwfarlk.ScenarioCart.Model.Realm_Cart_Model;
+import com.besolutions.awfarlk.ScenarioAwfarlk.ScenarioCart.Pattrens.Realm_adapter_Cart;
 import com.besolutions.awfarlk.ScenarioAwfarlk.ScenarioContactUs.Controller.Contact_Us;
 import com.besolutions.awfarlk.ScenarioAwfarlk.ScenarioFAQ.Controller.FAQ;
 import com.besolutions.awfarlk.ScenarioAwfarlk.ScenarioMain.Model.Model_Main_Rcy;
 import com.besolutions.awfarlk.ScenarioAwfarlk.ScenarioMain.Pattrens.RcyMainGridAdapter;
 import com.besolutions.awfarlk.ScenarioAwfarlk.ScenarioMyComprison.Controller.My_Comparison;
 import com.besolutions.awfarlk.ScenarioAwfarlk.ScenarioMyFavourite.Controller.MyFacvorite;
+import com.besolutions.awfarlk.ScenarioAwfarlk.ScenarioPersonalInfo.Controller.PersonalInfo;
+import com.besolutions.awfarlk.ScenarioAwfarlk.ScenariosProductDetails.Controller.Product_Details;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import io.realm.Realm;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,10 +43,36 @@ public class MainActivity extends AppCompatActivity {
     ImageView imgsearchtoolbar,imgdrawertoolbar,imgcarttoolbar;
     RelativeLayout relativecarttoolbar;
     TextView txtpagenametoolbar,txtcartcountertoolbar;
+    Realm realm;
+    Realm_adapter_Cart realm_adapter_cart;
+    ArrayList<Realm_Cart_Model> cartModels = new ArrayList<>();
+    ImageView imagecart;
+    public static TextView txtcartcounter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Realm.init(this);
+        realm_adapter_cart = new Realm_adapter_Cart(realm);
+        cartModels = realm_adapter_cart.retrieve();
+        txtcartcounter = findViewById(R.id.txtCartCounter);
+        imagecart = findViewById(R.id.imgCart);
+        if (cartModels.size() == 0) {
+            txtcartcounter.setVisibility(View.GONE);
+        } else {
+            txtcartcounter.setVisibility(View.VISIBLE);
+            txtcartcounter.setText("" + cartModels.size());
+        }
+        imagecart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                startActivity(new Intent(MainActivity.this, Cart.class));
+
+            }
+        });
 
         drawerLayout =findViewById(R.id.drawer);
         imgsearchtoolbar = findViewById(R.id.imgSearchToolbar);
@@ -257,6 +289,24 @@ public class MainActivity extends AppCompatActivity {
                 }
 
 //                startActivity(new Intent(MainActivity.this, MainActivity.class));
+//                finish();
+
+            }
+        });
+
+        //GO TO LogOut
+        LinearLayout linearPersonal = findViewById(R.id.linearProfile);
+        linearPersonal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (drawerLayout.isDrawerOpen(Gravity.LEFT)) {
+                    drawerLayout.closeDrawer(Gravity.LEFT);
+
+                } else {
+                    drawerLayout.openDrawer(Gravity.LEFT);
+                }
+
+                startActivity(new Intent(MainActivity.this, PersonalInfo.class));
 //                finish();
 
             }

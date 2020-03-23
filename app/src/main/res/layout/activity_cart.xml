@@ -12,6 +12,7 @@
         android:layout_height="match_parent">
 
         <LinearLayout
+            android:id="@+id/linearCart"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -103,7 +104,7 @@
                                     android:textStyle="bold" />
 
                                 <TextView
-                                    android:id="@+id/txtPriceSubItem"
+                                    android:id="@+id/txtToatalCart"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:gravity="center"
@@ -138,6 +139,7 @@
 
 
                             <ImageView
+                                android:id="@+id/imgContactUs"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight=".2"
@@ -162,6 +164,7 @@
 
 
                                 <TextView
+                                    android:id="@+id/txtCompleteYourOrder"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:gravity="center"
@@ -183,5 +186,18 @@
             </LinearLayout>
 
         </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/txtNoData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="لا توجد منتجات في العربة"
+            android:gravity="center"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"
+            android:textSize="@dimen/_20sdp"
+            android:visibility="gone"/>
     </RelativeLayout>
 </LinearLayout>

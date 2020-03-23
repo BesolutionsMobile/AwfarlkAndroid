@@ -148,7 +148,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:gravity="center"
-                            android:text="18850"
+                            android:text="0"
                             android:textColor="@color/colorBlack"
                             android:textSize="@dimen/_13sdp" />
 
@@ -169,13 +169,14 @@
                     android:layout_height="match_parent">
 
                     <TextView
+                        android:id="@+id/txtProductDetails"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:paddingStart="@dimen/_10sdp"
                         android:paddingTop="@dimen/_7sdp"
                         android:paddingEnd="@dimen/_10sdp"
                         android:paddingBottom="@dimen/_5sdp"
-                        android:text="alla ahhhasssan jja nmdawd "
+                        android:text=""
                         android:textColor="@color/colorBlack"
                         android:textSize="@dimen/_11sdp" />
 
@@ -192,7 +193,7 @@
                 android:gravity="center">
 
                 <LinearLayout
-                    android:layout_width="@dimen/_90sdp"
+                    android:layout_width="@dimen/_80sdp"
                     android:layout_height="match_parent"
                     android:layout_marginTop="@dimen/_5sdp"
                     android:layout_marginBottom="@dimen/_5sdp"
@@ -295,6 +296,7 @@
 
 
                     <LinearLayout
+                        android:id="@+id/linearAddToCart"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"

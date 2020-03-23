@@ -1,4 +1,4 @@
-package com.besolutions.awfarlk.ScenarioAwfarlk.ScenarioAboutUs.Controller;
+package com.besolutions.awfarlk.ScenarioAwfarlk.ScenarioChangePassword.Controller;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,8 +20,7 @@ import java.util.ArrayList;
 
 import io.realm.Realm;
 
-public class About_Us extends AppCompatActivity {
-
+public class ChangePassword extends AppCompatActivity {
     Realm realm;
     Realm_adapter_Cart realm_adapter_cart;
     ArrayList<Realm_Cart_Model> cartModels = new ArrayList<>();
@@ -30,11 +29,10 @@ public class About_Us extends AppCompatActivity {
     TextView txtpagenametoolbar;
     ImageView imgsearchtoolbar,imgbacktoolbar;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about_us);
+        setContentView(R.layout.activity_change_password);
 
         Realm.init(this);
         realm_adapter_cart = new Realm_adapter_Cart(realm);
@@ -52,11 +50,10 @@ public class About_Us extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                startActivity(new Intent(About_Us.this, Cart.class));
+                startActivity(new Intent(ChangePassword.this, Cart.class));
 
             }
         });
-
         txtpagenametoolbar = findViewById(R.id.txtPageNameToolbar);
         txtpagenametoolbar.setText("About Us");
         imgsearchtoolbar = findViewById(R.id.imgSearchToolbar);
@@ -65,7 +62,7 @@ public class About_Us extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                startActivity(new Intent(About_Us.this, MainActivity.class));
+                startActivity(new Intent(ChangePassword.this, MainActivity.class));
             }
         });
     }
