@@ -82,7 +82,7 @@
 
 
                                     <ImageView
-                                        android:id="@+id/profilePhoto"
+                                        android:id="@+id/imgPersonalInfo"
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
                                         android:layout_margin="5dp"
@@ -97,7 +97,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight=".45"
+                    android:layout_weight=".55"
                     android:orientation="vertical"
                     android:weightSum="1"
                     android:layout_marginTop="@dimen/_20sdp">
@@ -130,6 +130,7 @@
                     </LinearLayout>
 
                     <EditText
+                        android:id="@+id/editNameProfile"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_30sdp"
                         android:layout_marginStart="@dimen/_36sdp"
@@ -137,6 +138,10 @@
                         android:drawableEnd="@drawable/star"
                         android:paddingEnd="@dimen/_10sdp"
                         android:paddingStart="0dp"
+                        android:imeOptions="actionNext"
+                        android:textSize="@dimen/_11sdp"
+                        android:singleLine="true"
+                        android:inputType="text"
                         android:gravity="center_vertical"/>
 
 
@@ -168,6 +173,7 @@
                     </LinearLayout>
 
                     <EditText
+                        android:id="@+id/editEmailProfile"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_30sdp"
                         android:layout_marginStart="@dimen/_36sdp"
@@ -175,6 +181,10 @@
                         android:drawableEnd="@drawable/star"
                         android:paddingEnd="@dimen/_10sdp"
                         android:paddingStart="0dp"
+                        android:imeOptions="actionNext"
+                        android:textSize="@dimen/_11sdp"
+                        android:singleLine="true"
+                        android:inputType="textEmailAddress"
                         android:gravity="center_vertical"/>
 
 
@@ -206,6 +216,7 @@
                     </LinearLayout>
 
                     <EditText
+                        android:id="@+id/editPhoneProfile"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_30sdp"
                         android:layout_marginStart="@dimen/_36sdp"
@@ -213,12 +224,16 @@
                         android:drawableEnd="@drawable/star"
                         android:paddingEnd="@dimen/_10sdp"
                         android:paddingStart="0dp"
+                        android:imeOptions="actionNext"
+                        android:textSize="@dimen/_11sdp"
+                        android:singleLine="true"
+                        android:inputType="phone"
                         android:gravity="center_vertical"/>
 
 
 
                     <Button
-                        android:id="@+id/btnLogin"
+                        android:id="@+id/btnEditProfile"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_35sdp"
                         android:layout_marginStart="@dimen/_60sdp"
@@ -239,7 +254,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight=".3"
+                    android:layout_weight=".2"
                     android:orientation="vertical"
                     android:gravity="center">
 
@@ -267,5 +282,25 @@
 
 
         </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@color/colorTransparentLoading"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:indeterminateTint="@color/colorPrimary" />
+        </LinearLayout>
+
     </RelativeLayout>
 </LinearLayout>

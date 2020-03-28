@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.besolutions.awfarlk.R;
+import com.besolutions.awfarlk.ScenarioAwfarlk.ScenarioMain.Model.ModelCatrgory;
 import com.besolutions.awfarlk.ScenarioAwfarlk.ScenarioMain.Model.Model_Main_Rcy;
 import com.besolutions.awfarlk.ScenarioAwfarlk.ScenarioSubCategory.Controller.Sub_Category;
 import com.besolutions.awfarlk.Utils.TinyDB;
@@ -20,11 +21,11 @@ public class RcyMainGridAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 {
 
     TinyDB tinyDB;
-    List<Model_Main_Rcy> mMainGridList;
+    List<ModelCatrgory> mMainGridList;
     Context mContext;
 
 
-    public RcyMainGridAdapter(List<Model_Main_Rcy> songsList, Context context) {
+    public RcyMainGridAdapter(List<ModelCatrgory> songsList, Context context) {
         this.mMainGridList = songsList;
         this.mContext = context;
 
@@ -98,16 +99,16 @@ public class RcyMainGridAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
         tinyDB = new TinyDB(mContext);
         int viewType = getItemViewType(position);
-        final Model_Main_Rcy catrgory  = mMainGridList.get(position);
+        final ModelCatrgory catrgory  = mMainGridList.get(position);
 
 
         MainItemHolder mainHolder =(MainItemHolder) holder;
 
 
-        mainHolder.textmainitem.setText(catrgory.getTxtmainitem());
+        mainHolder.textmainitem.setText(catrgory.getName());
 
         Glide.with(mContext)
-                .load(catrgory.getImagemainitem())
+                .load(catrgory.getImage())
                 .placeholder(R.drawable.itemimage)
                 .into(mainHolder.imagemainitem);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -115,7 +116,8 @@ public class RcyMainGridAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
             public void onClick(View v) {
 
                 tinyDB = new TinyDB(mContext);
-                tinyDB.putString("PageName",mMainGridList.get(position).getTxtmainitem());
+                tinyDB.putString("PageName",mMainGridList.get(position).getName());
+                tinyDB.putString("CategoreId",mMainGridList.get(position).getId());
                 mContext.startActivity(new Intent(mContext, Sub_Category.class));
 
             }

@@ -17,37 +17,49 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.android.volley.VolleyError;
+import com.besolutions.awfarlk.NetworkLayer.Apicalls;
+import com.besolutions.awfarlk.NetworkLayer.NetworkInterface;
+import com.besolutions.awfarlk.NetworkLayer.ResponseModel;
 import com.besolutions.awfarlk.R;
 import com.besolutions.awfarlk.ScenarioAwfarlk.ScenarioAboutUs.Controller.About_Us;
 import com.besolutions.awfarlk.ScenarioAwfarlk.ScenarioCart.Controller.Cart;
+import com.besolutions.awfarlk.ScenarioAwfarlk.ScenarioCart.Controller.Cart_Popup;
 import com.besolutions.awfarlk.ScenarioAwfarlk.ScenarioCart.Model.Realm_Cart_Model;
 import com.besolutions.awfarlk.ScenarioAwfarlk.ScenarioCart.Pattrens.Realm_adapter_Cart;
 import com.besolutions.awfarlk.ScenarioAwfarlk.ScenarioContactUs.Controller.Contact_Us;
 import com.besolutions.awfarlk.ScenarioAwfarlk.ScenarioFAQ.Controller.FAQ;
+import com.besolutions.awfarlk.ScenarioAwfarlk.ScenarioMain.Model.ModelAllGategorey;
+import com.besolutions.awfarlk.ScenarioAwfarlk.ScenarioMain.Model.ModelCatrgory;
 import com.besolutions.awfarlk.ScenarioAwfarlk.ScenarioMain.Model.Model_Main_Rcy;
 import com.besolutions.awfarlk.ScenarioAwfarlk.ScenarioMain.Pattrens.RcyMainGridAdapter;
 import com.besolutions.awfarlk.ScenarioAwfarlk.ScenarioMyComprison.Controller.My_Comparison;
 import com.besolutions.awfarlk.ScenarioAwfarlk.ScenarioMyFavourite.Controller.MyFacvorite;
 import com.besolutions.awfarlk.ScenarioAwfarlk.ScenarioPersonalInfo.Controller.PersonalInfo;
 import com.besolutions.awfarlk.ScenarioAwfarlk.ScenariosProductDetails.Controller.Product_Details;
+import com.besolutions.awfarlk.ScenarioAwfarlk.Search_Popup;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import io.realm.Realm;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NetworkInterface {
 
 
     DrawerLayout drawerLayout;
-    ImageView imgsearchtoolbar,imgdrawertoolbar,imgcarttoolbar;
+    ImageView imgsearchtoolbar,imgdrawertoolbar;
     RelativeLayout relativecarttoolbar;
-    TextView txtpagenametoolbar,txtcartcountertoolbar;
+    TextView txtpagenametoolbar;
     Realm realm;
     Realm_adapter_Cart realm_adapter_cart;
     ArrayList<Realm_Cart_Model> cartModels = new ArrayList<>();
     ImageView imagecart;
     public static TextView txtcartcounter;
+    LinearLayout loading;
+    List<ModelCatrgory> catrgoryList = new ArrayList<>();
+    ModelCatrgory[] catrgories;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,43 +89,28 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout =findViewById(R.id.drawer);
         imgsearchtoolbar = findViewById(R.id.imgSearchToolbar);
         imgdrawertoolbar = findViewById(R.id.imgDrawerToolbar);
-        imgcarttoolbar = findViewById(R.id.imgCart);
         relativecarttoolbar = findViewById(R.id.relativeCartToolbar);
-        txtcartcountertoolbar = findViewById(R.id.txtCartCounter);
         txtpagenametoolbar = findViewById(R.id.txtPageNameToolbar);
-
-
+        loading = findViewById(R.id.loading);
         txtpagenametoolbar.setText("Category");
-        List<Model_Main_Rcy> main_rcyList = new ArrayList<>();
 
-        int imageItemMain[] ={R.drawable.itemimage,R.drawable.itemimage, R.drawable.itemimage,
-                R.drawable.itemimage,R.drawable.itemimage,R.drawable.itemimage,R.drawable.itemimage,
-                R.drawable.itemimage,R.drawable.itemimage, R.drawable.itemimage,
-                R.drawable.itemimage,R.drawable.itemimage,R.drawable.itemimage,R.drawable.itemimage,R.drawable.itemimage,R.drawable.itemimage,R.drawable.itemimage};
+        imgsearchtoolbar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-
-        String textItemMain[] ={"أحذية ملابس اكسيسوارات", "أحذية ملابس اكسيسوارات", "أحذية ملابس اكسيسوارات", "أحذية ملابس اكسيسوارات", "أحذية ملابس اكسيسوارات","أحذية ملابس اكسيسوارات",
-                "أحذية ملابس اكسيسوارات", "أحذية ملابس اكسيسوارات", "أحذية ملابس اكسيسوارات", "أحذية ملابس اكسيسوارات", "أحذية ملابس اكسيسوارات","أحذية ملابس اكسيسوارات",
-                "أحذية ملابس اكسيسوارات", "أحذية ملابس اكسيسوارات", "أحذية ملابس اكسيسوارات", "أحذية ملابس اكسيسوارات","أحذية ملابس اكسيسوارات"};
-
-        for (int i = 0; i<imageItemMain.length; i++)
-        {
-            Model_Main_Rcy model_main_rcy = new Model_Main_Rcy(imageItemMain[i],textItemMain[i]);
-            main_rcyList.add(model_main_rcy);
-        }
+                Search_Popup search_popup = new Search_Popup();
+                search_popup.dialog(MainActivity.this, R.layout.search_popup, 1);
 
 
-        RecyclerView recyclerView = findViewById(R.id.rcyMain);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new GridLayoutManager(this,2));
-        RcyMainGridAdapter adabter = new RcyMainGridAdapter(main_rcyList,this);
-        recyclerView.setAdapter(adabter);
+            }
+        });
 
-        DividerItemDecoration verticalDecoration = new DividerItemDecoration(recyclerView.getContext(),
-                DividerItemDecoration.HORIZONTAL);
-        Drawable verticalDivider = ContextCompat.getDrawable(this, R.drawable.vertical_divider);
-        verticalDecoration.setDrawable(verticalDivider);
-        recyclerView.addItemDecoration(verticalDecoration);
+
+
+        loading.setVisibility(View.VISIBLE);
+        new Apicalls(MainActivity.this,MainActivity.this).get_all_categorey();
+
+
 
         menu();
         onClick_navigation();
@@ -312,6 +309,51 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+    }
+
+    @Override
+    public void OnStart() {
+
+    }
+
+    @Override
+    public void OnResponse(ResponseModel model) {
+        loading.setVisibility(View.GONE);
+        Gson gson = new Gson();
+
+        ModelAllGategorey allGategorey = gson.fromJson(model.getResponse(),ModelAllGategorey.class);
+
+        catrgories = allGategorey.getCatrgories();
+        for (int i = 0; i<catrgories.length; i++){
+
+            ModelCatrgory catrgory = new ModelCatrgory();
+
+            catrgory.setAdv(catrgories[i].getAdv());
+            catrgory.setId(catrgories[i].getId());
+            catrgory.setImage(catrgories[i].getImage());
+            catrgory.setName(catrgories[i].getName());
+
+            catrgoryList.add(catrgory);
+        }
+
+        RecyclerView recyclerView = findViewById(R.id.rcyMain);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new GridLayoutManager(this,2));
+        RcyMainGridAdapter adabter = new RcyMainGridAdapter(catrgoryList,this);
+        recyclerView.setAdapter(adabter);
+
+        DividerItemDecoration verticalDecoration = new DividerItemDecoration(recyclerView.getContext(),
+                DividerItemDecoration.HORIZONTAL);
+        Drawable verticalDivider = ContextCompat.getDrawable(this, R.drawable.vertical_divider);
+        verticalDecoration.setDrawable(verticalDivider);
+        recyclerView.addItemDecoration(verticalDecoration);
+
+    }
+
+    @Override
+    public void OnError(VolleyError error) {
+        loading.setVisibility(View.GONE);
 
     }
 }

@@ -23,6 +23,7 @@ public class Home_Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Home_Activity.this,Register.class));
+                finish();
             }
         });
 
@@ -31,6 +32,7 @@ public class Home_Activity extends AppCompatActivity {
             public void onClick(View v) {
 
                 startActivity(new Intent(Home_Activity.this,Login.class));
+                finish();
             }
         });
     }

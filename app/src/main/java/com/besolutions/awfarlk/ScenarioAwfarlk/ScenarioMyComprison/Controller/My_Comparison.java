@@ -26,6 +26,7 @@ import com.besolutions.awfarlk.ScenarioAwfarlk.ScenarioMyFavourite.Model.model_M
 import com.besolutions.awfarlk.ScenarioAwfarlk.ScenarioMyFavourite.Pattrens.RcyMyFavouriteAdapter;
 import com.besolutions.awfarlk.ScenarioAwfarlk.ScenarioSub_Item.Controller.Sub_Item;
 import com.besolutions.awfarlk.ScenarioAwfarlk.ScenariosProductDetails.Controller.Product_Details;
+import com.besolutions.awfarlk.ScenarioAwfarlk.Search_Popup;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -95,28 +96,21 @@ public class My_Comparison extends AppCompatActivity {
                 startActivity(new Intent(My_Comparison.this , My_Comparison.class));
             }
         });
+        imgsearchtoolbar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Search_Popup search_popup = new Search_Popup();
+                search_popup.dialog(My_Comparison.this, R.layout.search_popup, 1);
+
+
+            }
+        });
 
 
         realm_adapter_myComparison = new Realm_adapter_MyComparison(realm);
         myComparisons = realm_adapter_myComparison.retrieve();
 
-//        List<model_MyComparison> myFavourites = new ArrayList<>();
-//
-//        int imageItemMain[] ={R.drawable.drpicture,R.drawable.drpicture};
-//
-//
-//        String textTitleSubItem[] ={"تكييف يونيون اير تكييف 5 حصان - بار / سخن (Artify)", "تكييف يونيون اير تكييف 5 حصان - بار / سخن (Artify)"};
-//
-//
-//        String textPriceSubItem[] ={"1220", "1880"};
-//
-//        float ratingSubItem[] ={1.255f, 3.555f};
-//
-//        for (int i = 0; i<imageItemMain.length; i++)
-//        {
-//            model_MyComparison modelSubItem = new model_MyComparison(textTitleSubItem[i],textPriceSubItem[i],imageItemMain[i],ratingSubItem[i]);
-//            myFavourites.add(modelSubItem);
-//        }
 
         if (myComparisons.size() == 0) {
 

@@ -7,6 +7,7 @@
     android:orientation="vertical"
     tools:context=".ScenarioAwfarlk.ScenarioHome.Controller.Login">
 
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="@dimen/_100sdp"
@@ -37,23 +38,37 @@
             android:id="@+id/btnLogIn"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_35sdp"
-            android:layout_marginTop="@dimen/_150sdp"
             android:background="@drawable/raduis_all"
             android:backgroundTint="@color/colorOrange"
             android:layout_marginRight="@dimen/_25sdp"
             android:layout_marginLeft="@dimen/_25sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
             android:text="Log in"
             android:textAllCaps="false"
+            android:layout_alignParentBottom="true"
             android:textStyle="bold"
             android:textSize="@dimen/_17sdp"
             android:gravity="center_vertical|center_horizontal"/>
 
 
     </RelativeLayout>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_420sdp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".85"
         android:layout_marginLeft="-100dp"
         android:layout_marginTop="@dimen/_1sdp"
         android:layout_marginRight="-100dp"
@@ -94,12 +109,17 @@
         </LinearLayout>
 
         <EditText
+            android:id="@+id/editNameRegister"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_30sdp"
             android:layout_marginStart="@dimen/_114sdp"
             android:layout_marginEnd="@dimen/_80sdp"
             android:drawableEnd="@drawable/star"
             android:paddingEnd="@dimen/_10sdp"
+            android:imeOptions="actionNext"
+            android:textSize="@dimen/_11sdp"
+            android:singleLine="true"
+            android:inputType="text"
             android:gravity="center_vertical"/>
 
 
@@ -129,12 +149,17 @@
         </LinearLayout>
 
         <EditText
+            android:id="@+id/editEmailRegister"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_30sdp"
             android:layout_marginStart="@dimen/_114sdp"
             android:layout_marginEnd="@dimen/_80sdp"
             android:drawableEnd="@drawable/star"
             android:paddingEnd="@dimen/_10sdp"
+            android:imeOptions="actionNext"
+            android:textSize="@dimen/_11sdp"
+            android:singleLine="true"
+            android:inputType="textEmailAddress"
             android:gravity="center_vertical"/>
 
 
@@ -164,6 +189,7 @@
         </LinearLayout>
 
         <EditText
+            android:id="@+id/editPhoneRegister"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_30sdp"
             android:layout_marginStart="@dimen/_114sdp"
@@ -171,6 +197,10 @@
             android:drawableEnd="@drawable/star"
             android:paddingEnd="@dimen/_10sdp"
             android:paddingStart="0dp"
+            android:imeOptions="actionNext"
+            android:textSize="@dimen/_11sdp"
+            android:singleLine="true"
+            android:inputType="phone"
             android:gravity="center_vertical"/>
 
 
@@ -200,12 +230,17 @@
         </LinearLayout>
 
         <EditText
+            android:id="@+id/editPasswordRegister"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_30sdp"
             android:layout_marginStart="@dimen/_114sdp"
             android:layout_marginEnd="@dimen/_80sdp"
             android:drawableEnd="@drawable/showpass"
             android:paddingEnd="@dimen/_10sdp"
+            android:imeOptions="actionNext"
+            android:textSize="@dimen/_11sdp"
+            android:singleLine="true"
+            android:inputType="textPassword"
             android:gravity="center_vertical"/>
 
 
@@ -236,15 +271,21 @@
         </LinearLayout>
 
         <EditText
+            android:id="@+id/editConPasswordRegister"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_30sdp"
             android:layout_marginStart="@dimen/_114sdp"
             android:layout_marginEnd="@dimen/_80sdp"
             android:drawableEnd="@drawable/showpass"
             android:paddingEnd="@dimen/_10sdp"
+            android:imeOptions="actionDone"
+            android:textSize="@dimen/_11sdp"
+            android:singleLine="true"
+            android:inputType="textPassword"
             android:gravity="center_vertical"/>
 
         <CheckBox
+            android:id="@+id/checkboxRegister"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_30sdp"
             android:textSize="@dimen/_13sdp"
@@ -269,6 +310,25 @@
             android:text="Go To Log In"/>
 
     </LinearLayout>
+    </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    <LinearLayout
+        android:id="@+id/loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="@color/colorTransparentLoading"
+        android:visibility="gone">
 
+        <ProgressBar
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:indeterminateTint="@color/colorPrimary" />
 
+    </LinearLayout>
 </RelativeLayout>

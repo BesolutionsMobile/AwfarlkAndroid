@@ -16,6 +16,9 @@
     <color name="fcolor">#1A7956</color>
     <color name="colorTransparent">#11000000</color>
     <color name="colorGray">#555454</color>
+    <color name="colorTransparentLoading">#48000000</color>
+    <color name="colorOrderSuccess">#fac90d</color>
+    <color name="colorOrderSuccessText">#87E287</color>
 
 
 </resources>

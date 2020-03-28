@@ -11,16 +11,19 @@ public class Realm_Cart_Model extends RealmObject {
     private String txtnumberchoose;
     private float ratingStar;
     private int imghome;
+    String product_id;
     @PrimaryKey
     private int id;
 
-    public Realm_Cart_Model(String txttitle, String txtpricediscount, String txtprice, String txtnumberchoose, float ratingStar, int imghome, int id) {
+
+    public Realm_Cart_Model(String txttitle, String txtpricediscount, String txtprice, String txtnumberchoose, float ratingStar, int imghome, String product_id, int id) {
         this.txttitle = txttitle;
         this.txtpricediscount = txtpricediscount;
         this.txtprice = txtprice;
         this.txtnumberchoose = txtnumberchoose;
         this.ratingStar = ratingStar;
         this.imghome = imghome;
+        this.product_id = product_id;
         this.id = id;
     }
 
@@ -37,6 +40,7 @@ public class Realm_Cart_Model extends RealmObject {
                 ", txtnumberchoose='" + txtnumberchoose + '\'' +
                 ", ratingStar=" + ratingStar +
                 ", imghome=" + imghome +
+                ", product_id='" + product_id + '\'' +
                 ", id=" + id +
                 '}';
     }
@@ -88,6 +92,14 @@ public class Realm_Cart_Model extends RealmObject {
 
     public void setImghome(int imghome) {
         this.imghome = imghome;
+    }
+
+    public String getProduct_id() {
+        return product_id;
+    }
+
+    public void setProduct_id(String product_id) {
+        this.product_id = product_id;
     }
 
     public int getId() {

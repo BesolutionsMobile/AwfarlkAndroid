@@ -81,5 +81,16 @@ dependencies {
     implementation 'com.ms-square:expandableTextView:0.1.4'
     implementation 'net.cachapa.expandablelayout:expandablelayout:2.9.2'
 
+    // animation library
+    implementation 'com.daimajia.easing:library:2.0@aar'
+    implementation 'com.daimajia.androidanimations:library:2.3@aar'
+
+    //Custom Toast Library
+    implementation 'com.github.GrenderG:Toasty:1.4.2'
+
+    //lotti
+    implementation 'com.airbnb.android:lottie:3.3.1'
+
+
 
 }

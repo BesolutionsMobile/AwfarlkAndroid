@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.besolutions.awfarlk.R;
 import com.besolutions.awfarlk.ScenarioAwfarlk.ScenarioFAQ.Model.FAQ_Group1_Model;
+import com.besolutions.awfarlk.ScenarioAwfarlk.ScenarioFAQ.Model.ModelQuestion;
 
 import net.cachapa.expandablelayout.ExpandableLayout;
 
@@ -22,9 +23,9 @@ public class FAQ_Group1_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
     private RecyclerView recyclerView;
     private int selectedItem = UNSELECTED;
-    List<FAQ_Group1_Model> mMainList;
+    List<ModelQuestion> mMainList;
 
-    public FAQ_Group1_Adapter(RecyclerView recyclerView, List<FAQ_Group1_Model> faqList) {
+    public FAQ_Group1_Adapter(RecyclerView recyclerView, List<ModelQuestion> faqList) {
         this.recyclerView = recyclerView;
         this.mMainList = faqList;
     }
@@ -41,10 +42,10 @@ public class FAQ_Group1_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
         ViewHolder viewHolder = (ViewHolder) holder;
         boolean isSelected = position == selectedItem;
-        final FAQ_Group1_Model questions = mMainList.get(position);
+        final ModelQuestion questions = mMainList.get(position);
 
-        viewHolder.expandButton.setText(questions.getQuestion1());
-        viewHolder.txtdiscription.setText(questions.getAnswer1());
+        viewHolder.expandButton.setText(questions.getTitle());
+        viewHolder.txtdiscription.setText(questions.getDescription());
         viewHolder.expandButton.setSelected(isSelected);
         viewHolder.expandableLayout.setExpanded(isSelected, false);
 

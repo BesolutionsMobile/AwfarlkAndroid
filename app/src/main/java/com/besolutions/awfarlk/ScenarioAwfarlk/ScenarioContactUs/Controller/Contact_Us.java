@@ -15,6 +15,7 @@ import com.besolutions.awfarlk.ScenarioAwfarlk.ScenarioCart.Pattrens.Realm_adapt
 import com.besolutions.awfarlk.ScenarioAwfarlk.ScenarioMain.Controller.MainActivity;
 import com.besolutions.awfarlk.ScenarioAwfarlk.ScenarioSub_Item.Controller.Sub_Item;
 import com.besolutions.awfarlk.ScenarioAwfarlk.ScenariosProductDetails.Controller.Product_Details;
+import com.besolutions.awfarlk.ScenarioAwfarlk.Search_Popup;
 
 import java.util.ArrayList;
 
@@ -64,5 +65,17 @@ public class Contact_Us extends AppCompatActivity {
                 startActivity(new Intent(Contact_Us.this, MainActivity.class));
             }
         });
+
+        imgsearchtoolbar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Search_Popup search_popup = new Search_Popup();
+                search_popup.dialog(Contact_Us.this, R.layout.search_popup, 1);
+
+
+            }
+        });
+
     }
 }

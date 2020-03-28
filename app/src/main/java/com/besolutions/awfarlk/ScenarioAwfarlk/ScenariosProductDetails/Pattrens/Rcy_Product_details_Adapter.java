@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.besolutions.awfarlk.R;
+import com.besolutions.awfarlk.ScenarioAwfarlk.ScenariosProductDetails.Model.ProductComment;
 import com.besolutions.awfarlk.ScenarioAwfarlk.ScenariosProductDetails.Model.RcyCommentModel;
 import com.bumptech.glide.Glide;
 import java.util.List;
@@ -16,13 +17,13 @@ import java.util.List;
 public class Rcy_Product_details_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
 
-    List<RcyCommentModel> rcyHomelList;
+    List<ProductComment> rcyHomelList;
 
     Context context;
     public static int x = 0;
 
 
-    public Rcy_Product_details_Adapter(List<RcyCommentModel> rcyHomelList, Context context) {
+    public Rcy_Product_details_Adapter(List<ProductComment> rcyHomelList, Context context) {
 
         this.context = context;
         this.rcyHomelList = rcyHomelList;
@@ -43,14 +44,14 @@ public class Rcy_Product_details_Adapter extends RecyclerView.Adapter<RecyclerVi
     @Override
     public void onBindViewHolder(final RecyclerView.ViewHolder holder, final int position) {
         int viewType = getItemViewType(position);
-        final RcyCommentModel songs = rcyHomelList.get(position);
+        final ProductComment songs = rcyHomelList.get(position);
 
 
         ItemeCartHolder itemeCartHolder = (ItemeCartHolder) holder;
-        itemeCartHolder.txtcommentname.setText(songs.getTxtCommentNmae());
-        itemeCartHolder.txtComments.setText(songs.getTxtComment());
+        itemeCartHolder.txtcommentname.setText(songs.getUserName());
+        itemeCartHolder.txtComments.setText(songs.getComment());
         Glide.with(context)
-                .load(songs.getImgPhoto())
+                .load(songs.getUserPhoto())
                 .placeholder(R.drawable.drpicture)
                 .into(itemeCartHolder.imgcommentphoto);
 

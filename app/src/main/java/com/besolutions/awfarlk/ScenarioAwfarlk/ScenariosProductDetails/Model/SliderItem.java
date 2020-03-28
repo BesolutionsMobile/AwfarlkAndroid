@@ -2,18 +2,20 @@ package com.besolutions.awfarlk.ScenarioAwfarlk.ScenariosProductDetails.Model;
 
 public class SliderItem {
 
-    private int imageUrl;
+    private String imageUrl;
 
+    public SliderItem() {
+    }
 
-    public SliderItem(int imageUrl) {
+    public SliderItem(String imageUrl) {
         this.imageUrl = imageUrl;
     }
 
-    public int getImageUrl() {
+    public String getImageUrl() {
         return imageUrl;
     }
 
-    public void setImageUrl(int imageUrl) {
+    public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
 }

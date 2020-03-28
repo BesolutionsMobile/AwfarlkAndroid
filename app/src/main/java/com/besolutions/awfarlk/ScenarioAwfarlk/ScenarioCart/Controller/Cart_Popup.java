@@ -10,6 +10,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.besolutions.awfarlk.R;
 import com.besolutions.awfarlk.ScenarioAwfarlk.ScenarioCart.Model.Realm_Cart_Model;
 import com.besolutions.awfarlk.ScenarioAwfarlk.ScenarioCart.Pattrens.Realm_adapter_Cart;
@@ -66,6 +68,7 @@ public class Cart_Popup {
                 String price = tinyDB.getString("cartPrice");
                 int image = Integer.parseInt(tinyDB.getString("cartImage"));
                 float rating = Float.parseFloat(tinyDB.getString("cartRating"));
+                String product_id = tinyDB.getString("idproductdetails");
 
                 c.setTxttitle(title);
                 c.setImghome(image);
@@ -73,6 +76,7 @@ public class Cart_Popup {
                 c.setTxtprice(price);
                 c.setTxtnumberchoose(txtnumber.getText().toString());
                 c.setTxtpricediscount(price);
+                c.setProduct_id(product_id);
 
                 Realm_adapter_Cart adapterCart = new Realm_adapter_Cart(realm);
                 adapterCart.save(c);
@@ -84,6 +88,8 @@ public class Cart_Popup {
 
 //                My_Comparison my_comparison = new My_Comparison();
 //                my_comparison.setcartcount();
+                context.startActivity(((AppCompatActivity) context).getIntent()); //REFRESH ACTIVITY
+                ((AppCompatActivity) context).overridePendingTransition(0, 0);//USING TO ANIMATE ZERO
 
             }
         });
