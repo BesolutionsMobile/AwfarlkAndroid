@@ -61,6 +61,8 @@ public class Product_Details extends AppCompatActivity implements NetworkInterfa
     RadioRealButtonGroup group1;
     RadioRealButton button1, button2;
 
+    LinearLayout linearproductdetail;
+    TextView txtnodetails;
 
     TextView txtproductdetails, txtprice, txtsend;
 
@@ -108,6 +110,8 @@ public class Product_Details extends AppCompatActivity implements NetworkInterfa
 
         tinyDB = new TinyDB(this);
 
+        linearproductdetail = findViewById(R.id.linearProductDetail);
+        txtnodetails = findViewById(R.id.txtNoDetails);
         group1 = findViewById(R.id.radioRealButtonGroup_1);
         button1 = findViewById(R.id.radioButton1);
         button2 = findViewById(R.id.radioButton2);
@@ -132,6 +136,7 @@ public class Product_Details extends AppCompatActivity implements NetworkInterfa
             public void onClick(View v) {
 
                 startActivity(new Intent(Product_Details.this, Sub_Item.class));
+                finish();
             }
         });
 
@@ -294,77 +299,87 @@ public class Product_Details extends AppCompatActivity implements NetworkInterfa
 
         } else {
             tinyDB = new TinyDB(this);
+
             Gson gson = new Gson();
             ProductModel productModel = gson.fromJson(model.getResponse(), ProductModel.class);
 
-            if (productModel.getStatus() == 1) {
+            if (productModel ==  null) {
 
-                if (productModel.getAlbum() != null) {
-
-                    albums = productModel.getAlbum();
-
-                    for (int i = 0; i < albums.length; i++) {
-
-                        SliderItem sliderItem = new SliderItem();
-                        sliderItem.setImageUrl(albums[i]);
-                        sliderItemList.add(sliderItem);
-
-                    }
-
-                    sliderView.setIndicatorAnimation(IndicatorAnimations.THIN_WORM); //set indicator animation by using SliderLayout.IndicatorAnimations. :WORM or THIN_WORM or COLOR or DROP or FILL or NONE or SCALE or SCALE_DOWN or SLIDE and SWAP!!
-                    sliderView.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);
-                    sliderView.setAutoCycleDirection(SliderView.AUTO_CYCLE_DIRECTION_RIGHT);
-                    sliderView.setIndicatorSelectedColor(Color.YELLOW);
-                    sliderView.setIndicatorUnselectedColor(Color.GRAY);
-                    sliderView.setScrollTimeInSec(3);
-                    sliderView.setAutoCycle(false);
-
-                    adapter = new SliderAdapter(Product_Details.this, sliderItemList);
-                    sliderView.setSliderAdapter(adapter);
-                }
-
-                txtpagenametoolbar.setText(productModel.getTitle());
-                txtproductdetails.setText(productModel.getDescription());
-                txtprice.setText(productModel.getPriceAfterDiscount());
-                tinyDB.putString("idproductdetails", productModel.getId());
-
-                if (productModel.getComments() != null) {
-
-
-                    commentss = productModel.getComments();
-
-                    for (int i = 0; i < commentss.length; i++) {
-
-                        ProductComment comment = new ProductComment();
-                        comment.setUserName(commentss[i].getUserName());
-                        comment.setComment(commentss[i].getComment());
-                        comment.setDate(commentss[i].getDate());
-                        comment.setId(commentss[i].getId());
-                        comment.setUserPhoto(commentss[i].getUserPhoto());
-
-
-                        commentModelList.add(comment);
-                    }
-
-                    recyclerView.setHasFixedSize(true);
-                    recyclerView.setLayoutManager(new LinearLayoutManager(this));
-                    Rcy_Product_details_Adapter adabter = new Rcy_Product_details_Adapter(commentModelList, this);
-                    recyclerView.setAdapter(adabter);
-
-
-                }
-
-
-            } else if (productModel.getStatus() == 2) {
-
-                Log.e("status", String.valueOf(productModel.getStatus()));
+                linearproductdetail.setVisibility(View.GONE);
+                txtnodetails.setVisibility(View.VISIBLE);
 
             } else {
 
-                Log.e("status", String.valueOf(productModel.getStatus()));
+
+                if (productModel.getStatus() == 1) {
+
+                    if (productModel.getAlbum() != null) {
+
+                        albums = productModel.getAlbum();
+
+                        for (int i = 0; i < albums.length; i++) {
+
+                            SliderItem sliderItem = new SliderItem();
+                            sliderItem.setImageUrl(albums[i]);
+                            sliderItemList.add(sliderItem);
+
+                        }
+
+                        sliderView.setIndicatorAnimation(IndicatorAnimations.THIN_WORM); //set indicator animation by using SliderLayout.IndicatorAnimations. :WORM or THIN_WORM or COLOR or DROP or FILL or NONE or SCALE or SCALE_DOWN or SLIDE and SWAP!!
+                        sliderView.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);
+                        sliderView.setAutoCycleDirection(SliderView.AUTO_CYCLE_DIRECTION_RIGHT);
+                        sliderView.setIndicatorSelectedColor(Color.YELLOW);
+                        sliderView.setIndicatorUnselectedColor(Color.GRAY);
+                        sliderView.setScrollTimeInSec(3);
+                        sliderView.setAutoCycle(false);
+
+                        adapter = new SliderAdapter(Product_Details.this, sliderItemList);
+                        sliderView.setSliderAdapter(adapter);
+                    }
+
+                    txtpagenametoolbar.setText(productModel.getTitle());
+                    txtproductdetails.setText(productModel.getDescription());
+                    txtprice.setText(productModel.getPriceAfterDiscount());
+                    tinyDB.putString("idproductdetails", productModel.getId());
+
+                    if (productModel.getComments() != null) {
+
+
+                        commentss = productModel.getComments();
+
+                        for (int i = 0; i < commentss.length; i++) {
+
+                            ProductComment comment = new ProductComment();
+                            comment.setUserName(commentss[i].getUserName());
+                            comment.setComment(commentss[i].getComment());
+                            comment.setDate(commentss[i].getDate());
+                            comment.setId(commentss[i].getId());
+                            comment.setUserPhoto(commentss[i].getUserPhoto());
+
+
+                            commentModelList.add(comment);
+                        }
+
+                        recyclerView.setHasFixedSize(true);
+                        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+                        Rcy_Product_details_Adapter adabter = new Rcy_Product_details_Adapter(commentModelList, this);
+                        recyclerView.setAdapter(adabter);
+
+
+                    }
+
+
+                } else if (productModel.getStatus() == 2) {
+
+                    Log.e("status", String.valueOf(productModel.getStatus()));
+
+                } else {
+
+                    Log.e("status", String.valueOf(productModel.getStatus()));
+
+                }
 
             }
-
         }
     }
 
@@ -374,5 +389,9 @@ public class Product_Details extends AppCompatActivity implements NetworkInterfa
 
     }
 
-
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(Product_Details.this, Sub_Item.class));
+        finish();
+    }
 }

@@ -21,6 +21,7 @@
             <include layout="@layout/toolbar2" />
 
             <LinearLayout
+                android:id="@+id/linearProductDetail"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
@@ -398,6 +399,17 @@
                 android:layout_gravity="center"
                 android:indeterminateTint="@color/colorPrimary" />
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtNoDetails"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/colorBlack"
+            android:text="Sorry...There IS No Details For This Product."
+            android:textStyle="bold"
+            android:textSize="@dimen/_20sdp"
+            android:gravity="center"
+            android:visibility="gone"/>
 
 
     </RelativeLayout>
