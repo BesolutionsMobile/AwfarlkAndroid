@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ScenarioAwfarlk.ScenarioChangePassword.Controller.ChangePassword"></activity>
+        <activity android:name=".ScenarioAwfarlk.ScenarioٍSearchResult.Controller.SearchResult"></activity>
+        <activity android:name=".ScenarioAwfarlk.ScenarioChangePassword.Controller.ChangePassword" />
         <activity android:name=".ScenarioAwfarlk.ScenarioPersonalInfo.Controller.PersonalInfo" />
         <activity android:name=".ScenarioAwfarlk.ScenarioFAQ.Controller.FAQ" />
         <activity android:name=".ScenarioAwfarlk.ScenarioContactUs.Controller.Contact_Us" />
